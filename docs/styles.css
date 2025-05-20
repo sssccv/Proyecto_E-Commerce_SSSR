@@ -1,0 +1,511 @@
+/* Variables CSS */
+:root {
+  --azul: #2a5bd7;
+  --azul-oscuro: #1a4abf;
+  --fondo: #f9f9f9;
+  --texto: #333;
+  --texto-claro: #777;
+  --blanco: #fff;
+  --gris: #eaeaea;
+  --gris-oscuro: #ccc;
+  --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transicion: all 0.3s ease;
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--texto);
+  background-color: var(--fondo);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Logo styles */
+.logo-img {
+  height: 40px;
+  width: auto;
+  transition: var(--transicion);
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: var(--blanco);
+  box-shadow: var(--sombra);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  padding: 15px 0;
+  transition: var(--transicion);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--texto);
+  font-weight: 500;
+  transition: var(--transicion);
+}
+
+.nav-links a:hover {
+  color: var(--azul);
+}
+
+.btn-login {
+  background-color: var(--azul);
+  color: var(--blanco);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transicion);
+  font-weight: 500;
+}
+
+.btn-login:hover {
+  background-color: var(--azul-oscuro);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--azul);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080?text=Hero+Background');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--blanco);
+  margin-top: 70px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background-color: var(--azul);
+  color: var(--blanco);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transicion);
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: var(--azul-oscuro);
+  transform: translateY(-3px);
+}
+
+/* Properties Section */
+.properties {
+  padding: 80px 0;
+}
+
+.properties h2, .amenities h2, .testimonials h2, .contact h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2rem;
+  color: var(--texto);
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.property-card {
+  min-width: 300px;
+  margin: 0 15px;
+  background: var(--blanco);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: var(--transicion);
+}
+
+.property-card:hover {
+  transform: translateY(-10px);
+}
+
+.property-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.property-card h3 {
+  padding: 15px 15px 5px;
+  font-size: 1.2rem;
+}
+
+.property-card p {
+  padding: 0 15px;
+  color: var(--texto-claro);
+  font-size: 0.9rem;
+}
+
+.property-card .price {
+  display: block;
+  padding: 10px 15px 20px;
+  font-weight: bold;
+  color: var(--azul);
+  font-size: 1.1rem;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transicion);
+}
+
+.carousel-btn:hover {
+  background-color: var(--blanco);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Amenities Section */
+.amenities {
+  padding: 80px 0;
+  background-color: var(--blanco);
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.amenity-item {
+  padding: 30px 20px;
+  background-color: var(--fondo);
+  border-radius: 10px;
+  transition: var(--transicion);
+}
+
+.amenity-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra);
+}
+
+.amenity-item i {
+  font-size: 2.5rem;
+  color: var(--azul);
+  margin-bottom: 15px;
+}
+
+.amenity-item h3 {
+  font-size: 1.1rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 80px 0;
+}
+
+.testimonial-carousel {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.testimonial {
+  background: var(--blanco);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  display: none;
+}
+
+.testimonial.active {
+  display: block;
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.client {
+  display: flex;
+  align-items: center;
+}
+
+.client img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.client h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.client span {
+  color: var(--texto-claro);
+  font-size: 0.9rem;
+}
+
+/* Contact Section */
+.contact {
+  padding: 80px 0;
+  background-color: var(--blanco);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info i {
+  color: var(--azul);
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: var(--texto);
+  font-size: 1.2rem;
+  transition: var(--transicion);
+}
+
+.social-icons a:hover {
+  color: var(--azul);
+}
+
+.contact-map {
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Footer */
+footer {
+  background-color: var(--texto);
+  color: var(--blanco);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: var(--blanco);
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--texto-claro);
+  transition: var(--transicion);
+}
+
+.close-btn:hover {
+  color: var(--texto);
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--gris-oscuro);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-map {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--blanco);
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .property-card {
+    min-width: 250px;
+  }
+  
+  .logo-img {
+    height: 35px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .btn-primary {
+    padding: 10px 20px;
+  }
+  
+  .amenities-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
