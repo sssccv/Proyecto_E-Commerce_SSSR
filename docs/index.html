@@ -20,6 +20,10 @@
         <li><a href="#testimonios">Testimonios</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li><button class="btn-login" id="loginBtn">Iniciar sesión</button></li>
+        <li><button class="btn-logout" id="logoutBtn">Cerrar sesión</button></li>
+        <li class="cart-icon" id="cartIcon">
+          <a href="#"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+        </li>
       </ul>
       <button class="hamburger" id="hamburger">
         <i class="fas fa-bars"></i>
@@ -42,35 +46,40 @@
       <h2>Nuestras Residencias</h2>
       <div class="carousel">
         <div class="carousel-inner">
-          <div class="property-card">
-            <img src="./fotos/Fotoprueba.png" alt="Residencia 1">
-            <h3>Loft</h3>
-            <p>1 habitacion | 1 baño | 1 estacionamiento | 50m²</p>
+          <div class="property-card" data-stock="5">
+            <img src="./fotos/depachico.jpg" alt="Residencia 1">
+            <h3>Loft (Prototipo VI)</h3>
+            <p>1 habitacion | 1 baño | 1 estacionamiento | 46m²</p>
             <span class="price">$2,820,000.00</span>
+            <span class="property-stock">Disponibles: <span class="stock-count">5</span></span>
           </div>
-          <div class="property-card">
-            <img src="./fotos/Fotoprueba.png" alt="Residencia 2">
-            <h3>Departamento universitario</h3>
-            <p>2 habitaciones | 2 baños | 2 Estacionamientos | 90m²</p>
+          <div class="property-card" data-stock="3">
+            <img src="./fotos/depamedio.jpg" alt="Residencia 2">
+            <h3>Departamento universitario (Prototipo QI)</h3>
+            <p>2 habitaciones | 2 baños | 2 Estacionamientos | 69m²</p>
             <span class="price">$4,017,500.00</span>
+            <span class="property-stock">Disponibles: <span class="stock-count">3</span></span>
           </div>
-          <div class="property-card">
-            <img src="./fotos/Fotoprueba.png" alt="Residencia 3">
-            <h3>Departamento Familiar</h3>
-            <p>3 habitaciones | 2 baños | 130m²</p>
+          <div class="property-card" data-stock="2">
+            <img src="./fotos/depagrande.jpg" alt="Residencia 3">
+            <h3>Departamento Familiar (Prototipo X)</h3>
+            <p>3 habitaciones | 2 baños | 2 Estacionamientos | 94m²</p>
             <span class="price">$4,890,000.00</span>
+            <span class="property-stock">Disponibles: <span class="stock-count">2</span></span>
           </div>
-          <div class="property-card">
-            <img src="./fotos/Fotoprueba.png" alt="Residencia 4">
+          <div class="property-card" data-stock="10">
+            <img src="./fotos/estacionamiento.jpg" alt="Residencia 4">
             <h3>Cajón de estacionamiento</h3>
             <p>5m²</p>
             <span class="price">$250,000</span>
+            <span class="property-stock">Disponibles: <span class="stock-count">10</span></span>
           </div>
-          <div class="property-card">
-            <img src="./fotos/Fotoprueba.png" alt="Residencia 5">
+          <div class="property-card" data-stock="1">
+            <img src="./fotos/local.jpg" alt="Residencia 5">
             <h3>Local Comercial</h3>
             <p>20m²</p>
             <span class="price">$4,300,000</span>
+            <span class="property-stock">Disponibles: <span class="stock-count">1</span></span>
           </div>
         </div>
         <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
@@ -126,7 +135,7 @@
         <div class="testimonial">
           <p>"Profesionales y atentos en todo momento, altamente recomendados."</p>
           <div class="client">
-            <img src="./fotos/Fotoprueba.png"" alt="Cliente 2">
+            <img src="./fotos/Fotoprueba.png" alt="Cliente 2">
             <div>
               <h4>Carlos Martínez</h4>
               <span>Residencia Vista al Mar</span>
@@ -196,6 +205,21 @@
         </div>
         <button type="submit" class="btn-primary">Ingresar</button>
       </form>
+    </div>
+  </div>
+
+  <!-- Modal de Carrito -->
+  <div class="modal" id="cartModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeCartBtn">&times;</span>
+      <h2>Tu Carrito</h2>
+      <div id="cartItems">
+        <p class="empty-cart">No hay propiedades en tu carrito</p>
+      </div>
+      <div class="cart-total">
+        <h3>Total: <span id="cartTotal">$0.00</span></h3>
+      </div>
+      <button class="btn-primary" id="checkoutBtn">Proceder al pago</button>
     </div>
   </div>
 
