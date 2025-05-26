@@ -21,11 +21,7 @@ a continuación te dejo una foto de como me gustaría que se viera la página ya
 
 
 docs/
-├── login.html
-├── register.html
-├── carrito.html
 ├── js/
-│   ├── carrito.js
 │   └── utils.js
 └── assets/
     └── logo.png (o imágenes si usas alguna)
