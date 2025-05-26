@@ -2,21 +2,28 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inicio | MirezInmobiliaria</title>
-  <link rel="stylesheet" href="styles/main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MirezInmobiliaria - Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <nav>
-    <h1>MirezInmobiliaria</h1>
-    <button onclick="signOut()">Cerrar sesión</button>
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">MirezInmobiliaria</a>
+    <div id="nav-links" class="nav-links">
+      <!-- Links dinámicos aquí -->
+    </div>
+    <button id="logout-btn" class="btn hidden">Cerrar sesión</button>
   </nav>
 
-  <main id="properties-container"></main>
+  <main>
+    <h1>Bienvenido a MirezInmobiliaria</h1>
+    <div id="properties-list" class="properties-list">
+      <!-- Lista de propiedades cargada por JS -->
+    </div>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script src="js/supabase.js"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/properties.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
