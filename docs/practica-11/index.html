@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <h1>DiagramaRelacional</h1>
+    <img src="./DiagramaRelacionalpng.png" alt="DiagramaRelacional">
+    
+    <h1>Modelo Entidad-Relacion</h1>
+    <img src="./Entidad-Relacion.png" alt="Entidad-Relacion">
+    <ul>
+        <li><strong>Cliente</strong>
+          <ul>
+            <li>Atributos: ID_Cliente, Nombre, Dirección, Teléfono, Email</li>
+          </ul>
+        </li>
+      
+        <li><strong>Producto (Propiedades)</strong>
+          <ul>
+            <li>Atributos: ID_Producto, Descripción, Precio, Stock, Estado (disponible, vendido, etc.)</li>
+          </ul>
+        </li>
+      
+        <li><strong>Carrito de compras (Compra)</strong>
+          <ul>
+            <li>Atributos: ID_Carrito, Fecha, Total</li>
+          </ul>
+        </li>
+      
+        <li><strong>Orden (Compra confirmada)</strong>
+          <ul>
+            <li>Atributos: ID_Orden, Fecha_Compra, Total, Estado (pagado, pendiente, cancelado)</li>
+          </ul>
+        </li>
+      
+        <li><strong>Pago</strong>
+          <ul>
+            <li>Atributos: ID_Pago, Monto, Fecha_Pago, Método</li>
+          </ul>
+        </li>
+      
+        <li><strong>Relaciones</strong>
+          <ul>
+            <li>Cliente - Carrito de compras: Un cliente puede tener uno o más carritos, pero generalmente uno activo.</li>
+            <li>Carrito de compras - Producto: Un carrito puede contener varios productos, y un producto puede estar en varios carritos (relación de muchos a muchos, con una tabla intermedia "DetalleCarrito").</li>
+            <li>Carrito de compras - Orden: Cuando el cliente realiza la compra, se genera una orden.</li>
+            <li>Orden - Pago: La orden se paga mediante un pago asociado.</li>
+          </ul>
+        </li>
+      </ul>
+      
+
+      <h1>Reglas de negocio</h1>
+      <h2> Cliente</h2>
+      <ul>
+        <li>Un cliente debe tener un nombre, dirección, teléfono y email válidos.</li>
+        <li>El email del cliente debe ser único.</li>
+      </ul>
+    
+      <h2> Producto</h2>
+      <ul>
+        <li>Cada producto debe tener una descripción, un precio mayor a cero y un estado definido (disponible, vendido, etc.).</li>
+        <li>El stock debe ser un número entero igual o mayor a cero.</li>
+        <li>Un producto solo puede ser agregado al carrito si su estado es "disponible" y hay stock.</li>
+      </ul>
+    
+      <h2> Carrito de Compras</h2>
+      <ul>
+        <li>Un carrito debe estar asociado a un cliente.</li>
+        <li>El total del carrito debe calcularse automáticamente en base a los productos y cantidades.</li>
+        <li>Un carrito no puede convertirse en orden si no tiene productos.</li>
+      </ul>
+    
+      <h2> Orden</h2>
+      <ul>
+        <li>Una orden se genera a partir de un carrito confirmado.</li>
+        <li>La orden debe contener la fecha de compra, el total, y su estado (pagado, pendiente, cancelado).</li>
+        <li>Una orden no puede tener el estado "pagado" si no hay un pago asociado.</li>
+      </ul>
+    
+      <h2> Pago</h2>
+      <ul>
+        <li>Cada pago debe estar vinculado a una orden.</li>
+        <li>El monto del pago debe coincidir con el total de la orden.</li>
+      </ul>
+    
+      <h2> Relaciones Generales</h2>
+      <ul>
+        <li>La relación entre carrito y producto debe gestionarse mediante una tabla intermedia llamada "DetalleCarrito", que incluya cantidad, precio unitario y subtotal.</li>
+        <li>Un producto no puede eliminarse si está asociado a un carrito u orden.</li>
+        <li>Si se cancela una orden, el stock de los productos debe restablecerse.</li>
+      </ul>
+
+</body>
+</html>

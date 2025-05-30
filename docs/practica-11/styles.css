@@ -1,0 +1,95 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000000;
+}
+
+/* Encabezados */
+h1 {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+h2 {
+    margin-top: 30px;
+    padding-left: 15px;
+    border-left: 4px solid #ffffff;
+}
+
+/* Imágenes */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+/* Listas */
+ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Estilos para listas anidadas */
+ul ul {
+    margin-top: 5px;
+    padding-left: 25px;
+    border-left: 1px dashed #ffffff;
+}
+
+/* Elementos fuertes (strong) */
+strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Reglas de negocio - estilos especiales */
+h2 + ul {
+    background-color: #000000;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #ffffff; 
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    h2 {
+        font-size: 1.4em;
+    }
+}
+
+/* Mejoras de legibilidad */
+li {
+    max-width: 90%;
+}
+
+/* Estilo para las relaciones */
+li:has(> strong:contains("Relaciones")) {
+    margin-top: 20px;
+}
+
+/* Color para los elementos de relaciones */
+li > strong:first-child {
+    color: #ffffff;
+}

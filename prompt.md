@@ -239,3 +239,6 @@ La aplicación debe permitir al usuario crear una cuenta o iniciar sesión si es
 
 A parte de proporcionarme el código necesario para construir la aplicación, proporcioname todas las instrucciones necesarias y los pasos a seguir para ir ejecutando el código y dar de alta los servicios en Supabase, también ten en mente que los archivos estarán adentro de una carpeta llamada "docs" para que la página arranque desde github
 a continuación te dejo una foto de como me gustaría que se viera la página ya funcionando
+
+
+- [Readme](/README.md)
